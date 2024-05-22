@@ -28,7 +28,7 @@ module.exports = {
         custom: 'var(--custom-up-shadow-default)'
       },
       boxShadow: {
-        custom: 'var(--custom-shadow-default)'
+        custom: 'var(--custom-shadow-default)',
       }
     }
   },
