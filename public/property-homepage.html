@@ -18,9 +18,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
             integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
             integrity="sha512-eMxdaSf5XW3ZW1wZCrWItO2jZ7A9FhuZfjVdztr7ZsKNOmt6TUMTQgfpNoVRyfPE5S9BC0A4suXzsGSrAOWcoQ=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
+            crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
         <script src="https://kit.fontawesome.com/90af925a41.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"
@@ -63,7 +63,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
-        :root {
+        /* :root {
             --color-navback: #393b48;
             --color-navbutton: #eabb67;
             --color-navaccent: #eabb67;
@@ -95,9 +95,8 @@
             --color-navoutline: #252522;
             --navlines: #252522;
             --color-navgray: rgba(166,193,182,.5);
-            /*--custom-drop-shadow: var(--custom-up-shadow-ltteal);*/
             --custom-shadow-default: var(--custom-shadow-ltteal);
-        }
+        } */
 
         body {
             font-family: 'Jost', sans-serif, Helvetica, Arial;
@@ -107,7 +106,7 @@
             font-size: 15px;
         }
 
-        .theme-default .drop-shadow-custom {
+        /* .theme-default .drop-shadow-custom {
             filter: drop-shadow(var(--custom-up-shadow-default));
         }
 
@@ -129,12 +128,12 @@
 
         .theme-ltteal .shadow-custom {
             box-shadow: var(--custom-shadow-ltteal)
-        }
+        } */
     </style>
 
     <body class="theme-default relative overflow-x-hidden">
 
-        <button id="defaultTheme" class="px-4 py-2 mx-5 my-10 rounded-full shadow-md hover:shadow-none active:shadow-none focus:shadow-none" style="background-color: #393b48; color: #f3f1eb;">Default Theme</button>
+        <!-- <button id="defaultTheme" class="px-4 py-2 mx-5 my-10 rounded-full shadow-md hover:shadow-none active:shadow-none focus:shadow-none" style="background-color: #393b48; color: #f3f1eb;">Default Theme</button>
         <button id="peachTheme" class="px-4 py-2 mx-5 my-10 rounded-full shadow-md hover:shadow-none active:shadow-none focus:shadow-none" style="background-color: #d8a892; color: #252522;">Peach Theme</button>
         <button id="ltTealTheme" class="px-4 py-2 mx-5 my-10 rounded-full shadow-md hover:shadow-none active:shadow-none focus:shadow-none" style="background-color: #cae5e0; color: #252522;">Light Teal Theme</button>
 
@@ -150,9 +149,9 @@
             document.getElementById('ltTealTheme').addEventListener('click', function() {
                 document.body.className = 'theme-ltteal'; // Set class to light teal theme
             });
-        </script>
+        </script> -->
 
-        <div id="app"></div>
+        <div id="app"> </div>
 
         <script type="module" src="/src/main.js"></script>
 
@@ -1057,38 +1056,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Clock Face
             // Declare and Initialize your variables and make references to the id defined in the html file, as needed.
-        //    const HOURHAND = document.querySelector("#hour");
-        //    const MINUTEHAND = document.querySelector("#minute");
+            const HOURHAND = document.querySelector("#hour");
+            const MINUTEHAND = document.querySelector("#minute");
             //const SECONDHAND = document.querySelector("#second");
 
             // Declare and Initialize the inbuilt date function
-        //    const date = new Date();
+            const date = new Date();
 
             // Hours/Minutes
-        //    let hr = date.getHours();
-        //    let min = date.getMinutes();
+            let hr = date.getHours();
+            let min = date.getMinutes();
             //let sec = date.getSeconds();
 
             // Log to see the output in the console
             //console.log("Hour: " + hr + " Minute: " + min);
 
             // Declare and Initialize your variables and create positions for each.
-        //    let hrPosition = (hr * 360) / 12 + (min * (360 / 60)) / 12;
-        //    let minPosition = (min * 360) / 60;
+            let hrPosition = (hr * 360) / 12 + (min * (360 / 60)) / 12;
+            let minPosition = (min * 360) / 60;
 
             // Create a function that actually run the clock
-        //    const runClock = () => {
+            const runClock = () => {
                 // Set each position when the function is called
-        //        hrPosition = hrPosition + 3 / 360;
-        //        minPosition = minPosition + 6 / 60;
+                hrPosition = hrPosition + 3 / 360;
+                minPosition = minPosition + 6 / 60;
 
                 // Set the transformation for each arm
-        //        HOURHAND.style.transform = "rotate(" + hrPosition + "deg)";
-        //        MINUTEHAND.style.transform = "rotate(" + minPosition + "deg)";
-        //    };
+                HOURHAND.style.transform = "rotate(" + hrPosition + "deg)";
+                MINUTEHAND.style.transform = "rotate(" + minPosition + "deg)";
+            };
 
             // Use the inbuilt setInterval function to invoke the method we created earlier
-        //    setInterval(runClock, 1000);
+            setInterval(runClock, 1000);
             // End Clock Face
 
 

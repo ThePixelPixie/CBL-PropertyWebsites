@@ -1,38 +1,49 @@
 <script>
-  import { onMount } from 'svelte';
+  import { tweened } from 'svelte/motion';
+  import { cubicOut } from 'svelte/easing';
+  import { fly } from 'svelte/transition';
+  import { writable } from 'svelte/store';
 
-  let showAlert = true;
+  const height = tweened(1, { duration: 700, easing: cubicOut });
+  const opacity = writable(1);
+
+  let isVisible = true;
 
   function closeAlert() {
-    showAlert = false;
+    height.set(0);
+    opacity.set(0);
+    setTimeout(() => {
+      isVisible = false;
+    }, 700);
   }
 </script>
 
-{#if showAlert}
-  <div class="bg-yellow-500 border border-yellow-500 text-white text-center p-4 relative">
-    <strong>ALERT!</strong> This could be used for alerts about mall closures, or other things.
-    <button type="button" class="absolute top-2 right-2 bg-transparent w-4 h-4 text-white" on:click={closeAlert}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
-        <path d="M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z" />
-      </svg>
-    </button>
-  </div>
+{#if isVisible}
+<div 
+  class="alert bg-red-500 border-red-500 p-4 text-white text-center relative rounded-none overflow-hidden" 
+  style="height: {$height * 60}px; opacity: {$opacity};" 
+  transition:fly={{ y: -100, duration: 700 }}>
+  <strong>ALERT!</strong> This could be used for alerts about mall closures, or other things.
+  <button
+    type="button"
+    class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-transparent text-2xl leading-none hover:text-gray-600 focus:outline-none"
+    on:click={closeAlert}
+    aria-label="Close"
+  >
+    ×
+  </button>
+</div>
 {/if}
 
 <style>
+  .alert {
+    margin-bottom: 0;
+    background-image: linear-gradient(135deg, transparent, transparent 25%, hsla(0,0%,0%,.05) 25%, hsla(0,0%,0%,.05) 50%, transparent 50%, transparent 75%, hsla(0,0%,0%,.05) 75%, hsla(0,0%,0%,.05));
+    background-size: 20px 20px;
+    transition: height 0.7s ease, opacity 0.7s ease;
+  }
+
   button {
-    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
-  }
-
-  .alert-dismissible {
-    transition: all 0.5s ease;
-    opacity: 1;
-  }
-
-  .alert-dismissible.collapsing {
-    opacity: 0;
-    padding: 0;
-    margin: 0;
-    max-height: 0;
+    cursor: pointer;
   }
 </style>

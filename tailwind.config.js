@@ -35,5 +35,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: []
+  plugins: [],
+  safelist: [
+    'stroke-animate'
+  ]
 }
