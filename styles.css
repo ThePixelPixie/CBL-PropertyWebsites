@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply font-sans;
+    font-optical-sizing: auto;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: grayscale;
+    font-size: 1rem;
+}
+
+a {
+    @apply transition-all duration-300 ease-in-out;
+}
+
+footer .tns-outer {
+    @apply -mt-[31px];
+}
+
+@layer utilities {
+    .clamp-lg {
+        font-size: clamp(2.25rem, 0.3077rem + 3.0769vw, 4rem);
+    }
+
+    .clamp-md {
+        font-size: clamp(2rem, 3.25vw, 3rem);
+    }
+
+    .clamp-sm {
+        font-size: clamp(1.5rem, 0.98rem + 0.2564vw, 1.25rem);
+    }
+
+    .clamp-xs {
+        font-size: clamp(1rem, 0.9485rem + 0.1213vw, 1.15rem);
+    }
+}
+
+section:nth-of-type(even) {
+    @apply bg-light;
+}
+
+section:first-of-type,
+section:last-of-type {
+    @apply bg-white;
+}
+
+h2 {
+    @apply uppercase text-dark font-black clamp-lg leading-[1.2];
+}
+
+/* h2 span {
+    @apply text-accent2;
+} */
+
+/* Alt colors */
+h2 span {
+    @apply text-accent1;
+}
+
+h2 span.alt {
+    @apply text-accent2 !important;
+}
+
+h3 {
+    @apply mb-12 mt-0 leading-5 clamp-md lowercase font-light;
+}
+
+/* h3 i {
+    @apply text-accent1 transform rotate-45 mt-1;
+} */
+
+/* Alt colors */
+h3 i {
+    @apply text-accent2 transform rotate-45 mt-1;
+}
+
+h4,
+.h2-alt {
+    @apply mt-8 mb-3 clamp-md uppercase font-bold;
+}
+
+p {
+    @apply clamp-sm font-normal mb-4;
+    line-height: 1.5; 
+}
+
+/* .btn-1-solid {
+    @apply bg-accent1 hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-accent1 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-accent1 focus:text-accent1 active:text-accent1 font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-1-outline {
+    @apply bg-white bg-opacity-30 hover:bg-accent1 focus:bg-accent1 active:bg-accent1 border-2 border-accent1 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-accent1 hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-2-solid {
+    @apply bg-accent2 hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-accent2 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-accent2 focus:text-accent2 active:text-accent2 font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-2-outline {
+    @apply bg-white bg-opacity-30 hover:bg-accent2 focus:bg-accent2 active:bg-accent2 border-2 border-accent2 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-accent2 hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+} */
+
+/* Alt colors */
+.btn-1-solid {
+    @apply bg-accent2 hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-accent2 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-accent2 focus:text-accent2 active:text-accent2 font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-1-outline {
+    @apply bg-white bg-opacity-30 hover:bg-accent2 focus:bg-accent2 active:bg-accent2 border-2 border-accent2 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-accent2 hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-2-solid {
+    @apply bg-accent1 hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-accent1 min-w-[30%] shadow-lg hover:shadow-none transition rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-accent1 focus:text-accent1 active:text-accent1 font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-2-outline {
+    @apply bg-white bg-opacity-30 hover:bg-accent1 focus:bg-accent1 active:bg-accent1 border-2 border-accent1 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-accent1 hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-white-solid {
+    @apply bg-white border-2 border-white min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer text-dark no-underline font-bold text-center whitespace-nowrap overflow-hidden transform duration-500 ease-in-out hover:scale-95;
+}
+
+.close {
+    @apply cursor-pointer block rounded-full relative w-12 h-11 bg-white before:transform before:-rotate-45 before:absolute before:content-[''] before:w-[55%] before:h-[2px] before:bg-accent1 before:top-[48%] before:left-[22%] before:transition-all before:duration-300 before:ease-out hover:before:rotate-180 active:before:rotate-180 focus:before:rotate-180 after:transform after:rotate-45 after:absolute after:content-[''] after:w-[55%] after:h-[2px] after:bg-accent1 after:top-[48%] after:left-[22%] after:transition-all after:duration-300 after:ease-out hover:after:rotate-180 active:after:rotate-180 focus:after:rotate-180;
+    text-indent: -9999px;
+}
+
+section {
+    @apply relative w-screen overflow-x-hidden;
+}
+
+.accordion {
+    @apply my-2;
+}
+
+#TenantMore #navButtons button {
+    @apply w-11 h-11 rounded-full -translate-y-1/2 bg-white opacity-75 hover:opacity-100 text-dark absolute transition-all duration-300 ease-in-out;
+}
+
+#ManhattanProject button.mp-prev,
+#ManhattanProject button.mp-next {
+    @apply w-12 h-12 mix-blend-overlay hover:mix-blend-normal active:mix-blend-normal focus:mix-blend-normal target:mix-blend-normal absolute -translate-y-1/2 transition-all duration-300 ease-in-out;
+}
+
+#BrandBrouhaha #navButtons button {
+    @apply w-11 h-11 rounded-full bg-white opacity-75 hover:opacity-100 text-dark transition-all duration-300 ease-in-out;
+}
+
+#ManhattanProject .tns-nav {
+    @apply w-full h-14 hidden md:flex md:flex-row justify-center content-center absolute bottom-20 md:bottom-28 z-30 gap-8;
+}
+
+#ManhattanProject .tns-nav button {
+    @apply w-4 h-4 rounded-full bg-white mix-blend-overlay self-center opacity-50 hover:opacity-75 active:opacity-75 focus:opacity-75 target:opacity-75 transform transition-all duration-300 ease-in-out relative before:absolute before:border before:border-solid before:border-white before:h-4 before:w-4 before:top-0 before:opacity-0 before:rounded-full before:transform before:-translate-x-1/2 before:-translate-y-1/2 before:transition-all before:duration-300 before:ease-in-out;
+}
+
+#ManhattanProject .tns-nav button.tns-nav-active {
+    @apply opacity-100 mix-blend-normal before:opacity-100 before:top-1/2 before:w-8 before:h-8;
+}
+
+footer {
+    margin-top: -1px !important;
+}
+
+/* #slider canvas {
+    @apply w-[150%] h-[150%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    z-index: 1;
+  } */
