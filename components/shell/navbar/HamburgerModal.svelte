@@ -1,19 +1,11 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { isModalOpen } from '../../../stores/modalStore';
 
   export let isOpen = false;
   const dispatch = createEventDispatcher();
 
-  function openModal() {
-    isModalOpen.set(true);
-    isOpen = true;
-  }
-
   function closeModal() {
-    isModalOpen.set(false);
     setTimeout(() => {
-        isOpen = false;
         dispatch('close');
     }, 250);
   }
@@ -27,7 +19,7 @@
 
 <div id="overlay" class={`fixed transition-opacity duration-300 ${isOpen ? 'opacity-100 inset-0 bg-white bg-opacity-50 backdrop-blur-8 h-screen w-screen z-[115]' : 'opacity-0 pointer-events-none h-0 w-0'}`} on:click={closeModal}></div>
 
-<div id="drawerHamburger" class={`fixed w-[95%] md:max-w-[430px] left-2/4 -translate-x-1/2 transition-all duration-500 max-h-[80vh] h-auto overflow-y-scroll ${isOpen ? 'opacity-100 bottom-14' : 'opacity-0 -bottom-full'} ease-in-out z-[119]`} style="scrollbar-width: none; -ms-overflow-style: none;">
+<div id="drawerHamburger" class={`fixed w-[95%] md:max-w-[430px] left-2/4 -translate-x-1/2 transition-all duration-500 max-h-[80vh] h-auto overflow-y-auto ${isOpen ? 'opacity-100 bottom-14' : 'opacity-0 -bottom-full'} ease-in-out z-[119]`}>
     <div class="bg-accent1 h-auto rounded-t-xl pb-20">
         <div class="flex justify-between items-center p-4 border-b">
             <a href="/" class="cursor-pointer" aria-label="Hamilton Place - Home">
@@ -101,10 +93,7 @@
                         <a href="#" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to Directory">Directory</a>
                     </li>
                     <li class="mb-1 order-3 md:order-4">
-                        <a href="#" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to Deals">Deals</a>
-                    </li>
-                    <li class="mb-1 order-2 md:order-5">
-                        <a href="#" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to Events">Events</a>
+                        <a href="/dealsevents" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to Deals">Deals & Events</a>
                     </li>
                     <li class="mb-1 order-1 md:order-6">
                         <a href="#" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to About">About</a>

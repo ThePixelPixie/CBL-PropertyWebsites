@@ -1,11 +1,5 @@
 <script>
-  import { getContext } from 'svelte';
-  import Instagram from './Instagram.svelte';
   import CurrentYear from './CurrentYear.svelte';
-
-  // Get urlStore from context for the conditional Instagram feed
-  const { url } = getContext('APP');
-  let urlStore = url;
 
   let isEntering = false;
 
@@ -59,15 +53,10 @@
     }
 </style>
 
-<footer class="bg-dark-d20 text-light-l100 z-30 overflow-hidden isolate">
-    <svg class="footer-wave-svg relative block fill-transparent h-8 w-[175%] md:w-full top-0 z-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
-        <path class="fill-white" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
-    </svg>
-
-    {#if $urlStore.pathname === '/'}
-        <Instagram />
-    {/if}
-
+<svg class="w-screen md:w-full h-9 bg-transparent block relative rotate-180 z-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+  <path class="fill-dark-d20" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+</svg>
+<footer class="bg-dark-d20 text-light-l100 z-30 overflow-hidden">
     <div class="max-w-screen-xl mx-auto p-5">
         <div class="text-center w-full mx-auto">
             <h3 class="mt-8 mb-5 lowercase font-light text-clamp-md">Subscribe</h3>
@@ -268,7 +257,7 @@
         </div>
     </div>
 
-    <div class="flex w-full flex-row justify-center pt-4 pb-40 text-center bg-accent2 text-light">
+    <div class="flex w-full flex-row justify-center pt-4 pb-40 text-center bg-accent1 text-light">
         <p class="text-sm font-semibold">©<CurrentYear /> <a class="text-light hover:text-light-80 cursor-pointer" href="https://www.cblproperties.com" rel="noopener noreferrer" aria-label="CBL Properties corporate website">CBL Properties<span aria-hidden="true"><i class="fa-solid fa-square-up-right text-white sr-only"></i></span><span class="sr-only">(opens in a new tab)</span></a> | All rights reserved.</p>
     </div>
 </footer>

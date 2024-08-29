@@ -4,7 +4,7 @@
     export let index;
 </script>
 
-<section class="w-full relative">
+<section class="w-screen relative overflow-y-hidden h-auto">
     {#if (index + 1) % 2 === 0}
         <SVGBorderTop />
     {/if}

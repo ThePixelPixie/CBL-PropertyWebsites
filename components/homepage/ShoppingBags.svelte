@@ -44,7 +44,7 @@
 </script>
 
 <style>
-  .path-animation {
+  /* .path-animation {
     animation: dash 4s ease forwards;
   }
 
@@ -58,21 +58,20 @@
   }
 
   rect {
-    opacity: 0; /* Start with opacity 0 */
     transition: opacity 2s ease;
     animation: fadeIn 2s forwards;
   }
 
   #left-box {
-    animation-delay: 1.6s; /* 40% of the way through the path animation */
+    animation-delay: 1.6s;
   }
 
   #center-box {
-    animation-delay: 2.4s; /* 60% of the way through the path animation */
+    animation-delay: 2.4s;
   }
 
   #right-box {
-    animation-delay: 3.2s; /* 80% of the way through the path animation */
+    animation-delay: 3.2s;
   }
 
   @keyframes fadeIn {
@@ -82,16 +81,16 @@
     to {
       opacity: 0.5;
     }
-  }
+  } */
 </style>
 
-<section id="ShoppingBags" class="relative w-screen min-h-96 h-full overflow-hidden flex flex-col justify-start mb-28">
-    <div class="w-full md:w-2/3 p-12 md:p-28">
-        <h2>Shopping at Hamilton Place Mall<span>.</span></h2>
+<section id="ShoppingBags" class="relative w-screen h-auto overflow-hidden flex flex-col justify-start">
+    <div class="w-full p-12 md:p-28">
+        <h2 class="clamp-md">Shopping at Hamilton Place Mall<span>.</span></h2>
         <h3><i class="fas fa-asterisk" aria-hidden="true"></i> Discover the Charm of Chattanooga</h3>
-        <p>If one must indulge in the modern-day ritual of shopping, one might as well do it with a touch of elegance and sophistication. Hamilton Place Mall offers not just a shopping spree, but an adventure worthy of exploration. From the finest boutiques to delightful eateries, every corner promises a treasure trove of finds. Here, the mundane act of shopping is elevated to an art form, where each visit is an opportunity to uncover the hidden gems that make this place a shopper's paradise. So, don your best hat, summon your adventurous spirit, and prepare for an expedition through the wonders of Hamilton Place Mall.</p>
+        <p>Hamilton Place is a regional mall located in Chattanooga, Tennessee, that features a wide array of retail, dining, and entertainment options. In summer 2021, Hamilton Place's Sears redevelopment was completed, which brought Dave & Busters, The Cheesecake Factory, DICK'S Sporting Goods, and a new-to-market 135-room Aloft by Marriott Hotel that features a rooftop bar and a Mean Mug Coffeehouse. Crunch Fitness coming soon.</p>
     </div>
-  <div class="absolute bottom-0 right-12 w-full hidden md:h-1/3 2xl:h-2/3 md:flex md:flex-row md:content-end md:justify-end">
+  <!-- <div class="absolute bottom-0 right-12 w-full hidden md:h-1/3 2xl:h-2/3 md:flex md:flex-row md:content-end md:justify-end">
     <svg
         class="w-[150%] h-auto"
         xmlns="http://www.w3.org/2000/svg"
@@ -105,5 +104,5 @@
         <rect id="center-box" class="fill-variable3" x="2733.2" y="340.42" width="440.38" height="592.36" style="opacity: 0;" />
         <path class="fill-none stroke-dark stroke-2 {isVisible ? 'path-animation' : ''}" d={svgPath}></path>
     </svg>
-  </div>
+  </div> -->
 </section>

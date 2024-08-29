@@ -70,7 +70,8 @@
     slider = tns({
       container: '.mp-slider',
       items: 1,
-      autoplay: false,
+      autoplay: true,
+      autoplayTimeout: 10000,
       controls: true,
       nav: true,
       navPosition: 'bottom',
@@ -96,12 +97,21 @@
 
   @media (max-width: 768px) {
   .carousel-content {
-    transform: scale(0.85); /* Adjust the scale as needed */
+    transform: scale(0.85);
   }
+}
+
+h2 {
+  font-size: clamp(2.125rem, 1.8942rem + 1.0256vw, 3.125rem);
+}
+
+.intro,
+.tagline {
+    font-size: clamp(1.125rem, 0.8798rem + 1.0897vw, 2.1875rem);
 }
 </style>
 
-<div id="ManhattanProject" class="hero relative w-screen p-0 m-0">
+<div id="ManhattanProject" class="hero relative w-screen p-0 m-0 overflow-x-hidden">
     <button class="mp-prev absolute top-1/2 left-1 z-30">
         <svg viewBox="0 0 477.175 477.175">
             <path class="fill-white" d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
@@ -114,7 +124,7 @@
                     c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"></path>
         </svg>
     </button>
-    <div class="mp-slider w-full h-[800px] overflow-hidden relative">
+    <div class="mp-slider w-screen h-[75vh] overflow-hidden relative">
         {#each MPCarousels as MPCarousel}
         <div class="tns-item relative overflow-hidden w-full h-full">
             <div class={`hero-overlay absolute top-0 left-0 w-full h-full z-10 ${MPCarousel.overlayClasses}`}></div>
@@ -123,16 +133,13 @@
             </div>
             <div class={`content-wrapper w-full h-full absolute top-0 left-0 flex flex-col px-20 md:px-28 items-center justify-center overflow-hidden z-20 ${MPCarousel.column}`}>
                 <div class={`carousel-content absolute p-0 md:p-3 box-border ${MPCarousel.textColor} ${MPCarousel.blockBkg}`}>
-                    <h3 class="mb-2 uppercase leading-tight text-center md:text-left text-clamp-md" style="text-shadow: 1px 1px 1px rgba(0,0,0,.5);">{MPCarousel.supertitle}</h3>
-                    <h2 class={`mb-2 text-center md:text-left text-clamp-lg ${MPCarousel.textColor}`} style="text-shadow: 1px 1px 1px rgba(0,0,0,.5);">{MPCarousel.title}</h2>
-                    <h3 class="text-center md:text-left text-clamp-sm leading-tight uppercase" style="text-shadow: 1px 1px 1px rgba(0,0,0,.5);">{MPCarousel.subtitle}</h3>
+                    <p class="intro mb-2 uppercase leading-tight text-center md:text-left drop-shadow-custom">{MPCarousel.supertitle}</p>
+                    <h2 class={`mb-2 text-center md:text-left drop-shadow-custom ${MPCarousel.textColor}`}>{MPCarousel.title}</h2>
+                    <p class="tagline text-center md:text-left leading-tight uppercase drop-shadow-custom">{MPCarousel.subtitle}</p>
                     <p class="w-full flex flex-row justify-center md:justify-start drop-shadow-2xl"><a href={MPCarousel.link} class="btn-white-solid">{MPCarousel.buttontext}</a></p>
                 </div>
             </div>
-            <!-- <svg class="w-full h-[55px] block absolute bottom-0 z-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" preserveAspectRatio="none" width="200" height="50">
-                <path class="fill-white" d={MPCarousel.svgPath}></path>
-            </svg> -->
-            <!-- <svg class="w-full h-[150px] block absolute bottom-0 z-20" fill="none">
+            <!-- <svg class="w-full h-[100px] block absolute bottom-0 z-20" fill="none">
               <path class="fill-white">
                 <animate 
                   repeatCount="indefinite"
@@ -162,7 +169,7 @@
         <use xlink:href="#gentle-wave" x="50" y="4" fill="rgba(248,249,250, 1)"/>  
       </g>
     </svg> -->
-    <svg class="w-[175%] md:w-full h-9 bg-transparent block relative bottom-[36px] rotate-180 z-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+    <svg class="w-screen h-9 bg-transparent block relative bottom-[36px] rotate-180 z-20 overflow-x-hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
       <path class="fill-white" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
-  </svg>
+    </svg>
 </div>

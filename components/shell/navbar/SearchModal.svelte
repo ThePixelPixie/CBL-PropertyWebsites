@@ -1,6 +1,5 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { isModalOpen } from '../../../stores/modalStore';
   
   export let isOpen = false;
   const dispatch = createEventDispatcher();
@@ -46,7 +45,6 @@
     focusedIndex = -1;
   }
 
-  // Search box animation
   function handleFocus() {
     isEnteringSearch= true;
   }
@@ -56,7 +54,6 @@
   }
 
   function handleGoIconClick() {
-    // Submit the form or any other desired action
     const searchForm = document.querySelector(".search-form");
     searchForm.submit();
     handleBlur();

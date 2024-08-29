@@ -9,13 +9,11 @@
     let truncatedText = '';
     let moreText = '';
 
-    // Split the text into words
     const words = fullText.split(' ');
 
-    // If the text is longer than 80 words, truncate it
-    if (words.length > 80) {
-        truncatedText = words.slice(0, 80).join(' ') + '...';
-        moreText = words.slice(80).join(' ');
+    if (words.length > 60) {
+        truncatedText = words.slice(0, 60).join(' ') + '...';
+        moreText = words.slice(60).join(' ');
     } else {
         truncated = false;
     }
@@ -27,10 +25,14 @@
             truncated = !truncated;
             setTimeout(() => {
                 transitioning = false;
-            }, 1500); // Match this duration to your transition duration
-        }, 50); // Small delay to ensure the transition class is applied
+            }, 1500);
+        }, 50);
     }
 </script>
+
+<svelte:head>
+    <script type="text/javascript" id="mapplic-script" src="https://mapplic.com/mapplic.js"></script>
+</svelte:head>
 
 <style>
     .description {
@@ -61,7 +63,7 @@
 
 <div class="w-full flex flex-col lg:flex-row items-start p-12">
 
-    <div id="TenantInfo" class="w-full lg:w-2/3 mx-auto px-12 md:pl-0 md:pr-12 order-2 lg:order-1">
+    <div id="TenantInfo" class="w-full lg:w-2/3 mx-auto px-0 sm:px-9 md:pl-0 md:pr-12 mt-12 md:mt-0 order-2 lg:order-1">
         <div id="tenantDescription" class="w-full">
             <p class="description {truncated ? (transitioning ? 'collapsing' : '') : 'expanded'} lg:py-0">
                 {#if truncated}
@@ -99,10 +101,9 @@
             </li>
         </ul>
 
-        <div class="h-0 w-full mx-auto overflow-hidden aspect-w-1 aspect-h-1 shadow-xl border-accent1 border rounded-lg relative">
-            <mapplic-map data-location="s222" data-settings={`{"sidebar":false}`} data-json="https://mapplic.com/getMapData?id=Rz9FWUANTnM2DFsSHD7R" id="my-mapplic-map" class="z-20 absolute inset-0 w-full h-full"></mapplic-map>
+        <div class="w-full h-auto mx-auto overflow-hidden shadow-xl border-accent1 border rounded-lg relative">
+            <mapplic-map data-location="U222" data-settings={`{"sidebar":false}`} data-json="https://mapplic.com/getMapData?id=vlcUgrQd4wCkjINjkkSC" id="my-mapplic-map"></mapplic-map>
         </div>
-        <script type="text/javascript" id="mapplic-script" src="https://mapplic.com/mapplic.js"></script>
     </div>
 
 </div>

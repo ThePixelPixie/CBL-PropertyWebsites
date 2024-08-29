@@ -16,7 +16,7 @@
     <h2 class="h2-alt text-center">You Might Also Like<span>...</span></h2>
     <div class="flex flex-row flex-wrap md:flex-nowrap gap-3 md:gap-4 w-full md:w-1/2 mx-auto justify-center">
         {#each columns as column}
-            <div class="w-2/5 md:w-1/3 p-2 rounded-lg shadow-xl" style="background-color: #fff;">
+            <div class="w-2/5 md:w-1/3 max-w-[250px] p-2 rounded-lg shadow-xl" style="background-color: #fff;">
                 <div class="w-full aspect-w-1 aspect-h-1">
                     <img src={column.imageUrl} alt={column.title} class="w-full object-contain object-center rounded-md" />
                 </div>

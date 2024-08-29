@@ -4,7 +4,7 @@
   import { Router, Route } from 'svelte-routing';
 
   import Header from './components/shell/Header.svelte';
-  import TabBar from './components/shell/navbar/TabBar.svelte';
+  import NavBar from './components/shell/navbar/NavBar.svelte';
   import Footer from './components/shell/Footer.svelte';
   import ModalBackdrop from './components/shell/ModalBackdrop.svelte';
 
@@ -12,6 +12,7 @@
   import Tenant from './Tenant.svelte';
   //import TenantAlt from './TenantAlt.svelte';
   import Directory from './Directory.svelte';
+  import DealsEvents from './DealsEvents.svelte';
   
   // Initialize the URL store
   const urlStore = createUrlStore(window.location.href);
@@ -31,12 +32,13 @@
 </script>
 
 <Header {urlStore} />
-<TabBar {urlStore} />
+<NavBar {urlStore} />
 
 <Router {urlStore} on:routechange={handleRouteChange}>
   <Route path="/" component={Home} />
   <Route path="/tenant" component={Tenant} />
   <Route path="/directory" component={Directory} />
+  <Route path="/dealsevents" component={DealsEvents} />
 </Router>
 
 <Footer {urlStore} />
