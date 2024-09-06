@@ -60,45 +60,6 @@
   }
 </script>
 
-<style>
-    .search-box i.search-icon {
-        will-change: transform;
-        transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
-        -webkit-transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
-        -moz-transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
-        -o-transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
-    }
-
-    .search-box path {
-        stroke-miterlimit: 10;
-        stroke-dasharray: 740;
-        stroke-dashoffset: 0;
-        transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
-        -webkit-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
-        -moz-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
-        -o-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
-    }
-
-    .border-entering path {
-        stroke-dasharray: 740;
-        stroke-dashoffset: 459;
-        transition: stroke-dashoffset 650ms cubic-bezier(0.755, 0.150, 0.205, 1.000);
-    }
-
-    .search-box .go-icon {
-        will-change: opacity;
-        transition: opacity 190ms ease-out, transform 260ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-    }
-
-    .border-entering .go-icon {
-        transition: opacity 190ms ease-out, transform 260ms 20ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-    }
-
-  .prediction-item {
-    padding: 0.5em 0.75em;
-    transition: all 0.2s ease-in-out;
-  }
-</style>
 <div id="overlay" class={`inset-0 bg-white bg-opacity-50 backdrop-blur-8 h-screen w-screen transition-opacity duration-300 ${isOpen ? 'fixed opacity-100 z-[115]' : 'hidden opacity-0 pointer-events-none'}`} on:click={closeModal}></div>
 
 <div id="drawerSearch" class={`fixed w-[95%] md:max-w-[430px] left-2/4 -translate-x-1/2 transition-all duration-500 max-h-[80vh] h-auto overflow-y-scroll ${isOpen ? 'opacity-100 bottom-14' : 'opacity-0 -bottom-full'} ease-in-out z-[119]`} style="scrollbar-width: none; -ms-overflow-style: none;">
@@ -163,17 +124,17 @@
             </button>
         </div>
         <div class="p-4 flex flex-col">
-            <div class={`search-box relative flex flex-row items-center w-full max-w-sm h-16 rounded-full mx-auto mb-0 mt-8 ${isEnteringSearch? 'border-entering' : ''}`}>
-                <i class={`fa fa-search search-icon absolute left-2.5 w-20 text-center text-[1.22rem] transform duration-200 ease-in-out ${isEnteringSearch? 'text-accent2 rotate-90' : 'text-white'}`} aria-hidden="true"></i>
-                <form class="search-form overflow-hidden absolute top-0 left-16 w-95" on:submit|preventDefault>
+            <div class={`input-box ${isEnteringSearch? 'border-entering' : ''}`}>
+                <i class={`fa fa-search input-icon ${isEnteringSearch? 'text-accent2 rotate-90' : 'text-white'}`} aria-hidden="true"></i>
+                <form class="input-form" on:submit|preventDefault>
                     <input id="search" type="text" placeholder="Search" name="search" autocomplete="off"
-                        class={`relative w-[95%] h-16 rounded-full border-none bg-transparent px-17 text-xl font-normal outline-none transform duration-200 ease-in-out ${isEnteringSearch? 'placeholder-accent2 text-accent2' : 'placeholder-white text-white'}`}
+                        class={`${isEnteringSearch? 'placeholder-accent2 text-accent2' : 'placeholder-white text-white'}`}
                         on:focus={handleFocus}
                         on:blur={handleBlur}
                         on:input={e => search = e.target.value}
                         on:keydown={handleKeyDown}
                         bind:value={search}>
-                    <ul id="output" class={`list-none w-full z-50 bg-accent1-o7 ${returnList.length > 0 ? 'flex flex-col mt-17' : 'hidden'}`}>
+                    <ul id="output" class={`${returnList.length > 0 ? 'flex flex-col mt-17' : 'hidden'}`}>
                         {#each returnList as prediction, index}
                             <li class={`prediction-item text-white hover:bg-accent2 ${index === focusedIndex ? 'bg-accent2' : ''}`}>
                             <a href="#" 
@@ -196,11 +157,11 @@
                         {/each}
                     </ul>
                 </form>
-                <svg class="search-border block w-full h-16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;" xml:space="preserve">
-                    <path class={`stroke-[3px] ${isEnteringSearch? 'fill-transparent stroke-accent2' : 'fill-none stroke-white'}`} d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"></path>
-                    <path class={`stroke-[3px] ${isEnteringSearch? 'fill-transparent stroke-accent2' : 'fill-none stroke-white'}`} d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"></path>
+                <svg class="input-border" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;" xml:space="preserve">
+                    <path class={`${isEnteringSearch? 'fill-transparent stroke-accent2' : 'fill-none stroke-white'}`} d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"></path>
+                    <path class={`${isEnteringSearch? 'fill-transparent stroke-accent2' : 'fill-none stroke-white'}`} d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"></path>
                 </svg>
-                <div class={`go-icon absolute right-2.5 w-20 text-center text-[1.38rem] transform duration-200 cursor-pointer ${isEnteringSearch? 'opacity-1 rotate-0 text-accent2' : 'opacity-0 rotate-45 text-white'}`}>
+                <div class={`go-icon ${isEnteringSearch? 'opacity-1 rotate-0 text-accent2' : 'opacity-0 rotate-45 text-white'}`}>
                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </div>
             </div>

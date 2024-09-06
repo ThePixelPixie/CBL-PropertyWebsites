@@ -18,59 +18,24 @@
   }
 </script>
 
-<style>
-    .newsletter-box i.newsletter-icon {
-        will-change: transform;
-        transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
-        -webkit-transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
-        -moz-transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
-        -o-transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
-    }
-
-    .newsletter-box path {
-        stroke-miterlimit: 10;
-        stroke-dasharray: 740;
-        stroke-dashoffset: 0;
-        transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
-        -webkit-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
-        -moz-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
-        -o-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
-    }
-
-    .border-entering path {
-        stroke-dasharray: 740;
-        stroke-dashoffset: 459;
-        transition: stroke-dashoffset 650ms cubic-bezier(0.755, 0.150, 0.205, 1.000);
-    }
-
-    .newsletter-box .go-icon {
-        will-change: opacity;
-        transition: opacity 190ms ease-out, transform 260ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-    }
-
-    .border-entering .go-icon {
-        transition: opacity 190ms ease-out, transform 260ms 20ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-    }
-</style>
-
-<svg class="w-screen md:w-full h-9 bg-transparent block relative rotate-180 z-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+<svg class="w-screen md:w-full h-9 bg-transparent block relative rotate-180 z-40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
   <path class="fill-dark-d20" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
 </svg>
-<footer class="bg-dark-d20 text-light-l100 z-30 overflow-hidden">
+<footer class="bg-dark-d20 text-light-l100 z-40 overflow-hidden">
     <div class="max-w-screen-xl mx-auto p-5">
         <div class="text-center w-full mx-auto">
             <h3 class="mt-8 mb-5 lowercase font-light text-clamp-md">Subscribe</h3>
             <p class="text-xl mt-2 mb-4 leading-5 font-normal">Don't miss out on exclusive deals and events. Subscribe to our newsletter now.</p>
-            <div class={`newsletter-box relative flex flex-row items-center w-full max-w-sm h-16 rounded-full mx-auto my-0 ${isEntering ? 'border-entering' : ''}`}>
-                <i class={`fab fa-telegram-plane newsletter-icon absolute left-2.5 w-20 text-center text-[1.22rem] ${isEntering ? 'text-accent2' : 'text-white'}`} aria-hidden="true"></i>
-                <form class="newsletter-form overflow-hidden absolute top-0 left-16 w-95">
-                    <input id="newsletter" type="text" placeholder="Email Address" name="email" autocomplete="off" class={`relative w-[95%] h-16 rounded-full border-none bg-transparent px-17 text-xl font-normal outline-none ${isEntering ? 'placeholder-accent2-l20 text-accent2-l20' : 'placeholder-white text-white'}`} on:focus={handleFocus} on:blur={handleBlur}>
+            <div class={`input-box my-0 ${isEntering ? 'border-entering' : ''}`}>
+                <i class={`fab fa-telegram-plane input-icon ${isEntering ? 'text-accent2' : 'text-white'}`} aria-hidden="true"></i>
+                <form class="input-form">
+                    <input id="newsletter" type="text" placeholder="Email Address" name="email" autocomplete="off" class={`${isEntering ? 'placeholder-accent2-l20 text-accent2-l20' : 'placeholder-white text-white'}`} on:focus={handleFocus} on:blur={handleBlur}>
                 </form>
-                <svg class="newsletter-border block w-full h-16" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;" xml:space="preserve" preserveAspectRatio="none">
-                    <path class={`stroke-[3px] ${isEntering ? 'fill-dark stroke-accent2' : 'fill-none stroke-white'}`} d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"></path>
-                    <path class={`stroke-[3px] ${isEntering ? 'fill-dark stroke-accent2' : 'fill-none stroke-white'}`} d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"></path>
+                <svg class="input-border" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;" xml:space="preserve" preserveAspectRatio="none">
+                    <path class={`${isEntering ? 'fill-dark stroke-accent2' : 'fill-none stroke-white'}`} d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"></path>
+                    <path class={`${isEntering ? 'fill-dark stroke-accent2' : 'fill-none stroke-white'}`} d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"></path>
                 </svg>
-                <div class={`go-icon absolute right-2.5 w-20 text-center text-[1.38rem] transform cursor-pointer ${isEntering ? 'opacity-1 rotate-0 text-accent2' : 'opacity-0 rotate-45 text-white'}`}>
+                <div class={`go-icon ${isEntering ? 'opacity-1 rotate-0 text-accent2' : 'opacity-0 rotate-45 text-white'}`}>
                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </div>
             </div>

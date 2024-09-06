@@ -203,13 +203,13 @@ p {
 }
 
 .btn-shop-solid {
-    @apply bg-variable4 hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-variable4 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-variable4 focus:text-variable4 active:text-variable4 font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    @apply bg-variable4-d hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-variable4-d min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-variable4-d focus:text-variable4-d active:text-variable4-d font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
     max-width: 100%;
     text-overflow: ellipsis;
 }
 
 .btn-shop-outline {
-    @apply bg-white bg-opacity-30 hover:bg-variable4 focus:bg-variable4 active:bg-variable4 border-2 border-variable4 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-variable4 hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    @apply bg-white bg-opacity-30 hover:bg-variable4-d focus:bg-variable4-d active:bg-variable4-d border-2 border-variable4-d min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-variable4-d hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
     max-width: 100%;
     text-overflow: ellipsis;
 }
@@ -274,6 +274,14 @@ button.de-next {
     @apply w-4 h-4 rounded-full bg-white mix-blend-overlay self-center opacity-50 hover:opacity-75 active:opacity-75 focus:opacity-75 target:opacity-75 transform transition-all duration-300 ease-in-out relative before:absolute before:border before:border-solid before:border-white before:h-4 before:w-4 before:top-0 before:opacity-0 before:rounded-full before:transform before:-translate-x-1/2 before:-translate-y-1/2 before:transition-all before:duration-300 before:ease-in-out;
 }
 
+.sub-filter {
+    @apply border border-gray-300 hover:border-black transition rounded-[13px] flex text-sm items-center h-8 relative px-6 py-0 duration-700 m-2;
+}
+
+.count-circle {
+    @apply absolute -top-2 -right-2 bg-slate-400 text-white w-5 h-5 leading-4 rounded-full text-center;
+}
+
 #ManhattanProject .tns-nav button.tns-nav-active {
     @apply opacity-100 mix-blend-normal before:opacity-100 before:top-1/2 before:w-8 before:h-8;
 }
@@ -301,4 +309,60 @@ display: none;
 
 #Section3-Content {
     background: linear-gradient(to bottom,  hsl(40, 68%, 98%) 0%,#f8f9fa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+/* Input box */
+.input-box {
+    @apply relative flex flex-row items-center w-full max-w-sm h-16 rounded-full mx-auto mb-0 mt-8;
+}
+.input-box i.input-icon {
+    @apply absolute left-2.5 w-20 text-center text-[1.22rem] transform duration-200 ease-in-out;
+    will-change: transform;
+    -webkit-transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
+    -moz-transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
+    -o-transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
+    transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
+}
+
+.input-box form.input-form {
+    @apply overflow-hidden absolute top-0 left-16 w-[95%];
+}
+
+.input-box form.input-form input {
+    @apply relative w-[95%] h-16 rounded-full border-none bg-transparent px-[17px] text-xl font-normal outline-none transform duration-200 ease-in-out;
+}
+
+.input-box form.input-form ul#input {
+    @apply list-none w-full bg-accent1-o7;
+}
+
+.input-box svg.input-border {
+    @apply block w-full h-16;
+}
+
+.input-box path {
+    @apply stroke-[3px];
+    stroke-miterlimit: 10;
+    stroke-dasharray: 740;
+    stroke-dashoffset: 0;
+    -webkit-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
+    -moz-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
+    -o-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
+    transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
+}
+
+.border-entering path {
+    stroke-dasharray: 740;
+    stroke-dashoffset: 459;
+    transition: stroke-dashoffset 650ms cubic-bezier(0.755, 0.150, 0.205, 1.000);
+}
+
+.input-box .go-icon {
+    @apply absolute right-2.5 w-20 text-center text-[1.38rem] transform duration-200 cursor-pointer;
+    will-change: opacity;
+    transition: opacity 190ms ease-out, transform 260ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+.border-entering .go-icon {
+    transition: opacity 190ms ease-out, transform 260ms 20ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
