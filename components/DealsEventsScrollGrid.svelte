@@ -170,6 +170,7 @@
   let allSearchTerms = [];
   let filteredSearchTerms = [];
   let showSuggestions = false;
+  let clickedSuggestion = false;
   let isEnteringSearch = false;
   let focusedIndex = -1;
   let allCount = 0;
@@ -216,8 +217,10 @@
   }
 
   function selectSuggestion(suggestion) {
-    searchTerm = suggestion;
+    const plainText = suggestion.replace(/<\/?[^>]+(>|$)/g, "");
+    searchTerm = plainText;
     showSuggestions = false;
+    clickedSuggestion = true;
     focusedIndex = -1;
     applyFilters();
   }
@@ -230,6 +233,13 @@
     isEnteringSearch= false;
     setTimeout(() => showSuggestions = false, 100);
   }
+
+  function handleSearchInput() {
+    clickedSuggestion = false; // Reset when user types again
+    showSuggestions = filteredSearchTerms.length > 0;
+    applyFilters();
+  }
+
 
   function splitSubFilterTerms(subFilterTerms) {
     return subFilterTerms.split(',').map(term => term.trim().toLowerCase());
@@ -449,7 +459,7 @@
               <path class={`${isEnteringSearch? 'fill-transparent stroke-accent1' : 'fill-none stroke-dark'}`} d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"></path>
               <path class={`${isEnteringSearch? 'fill-transparent stroke-accent1' : 'fill-none stroke-dark'}`} d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"></path>
           </svg>
-          {#if returnList.length > 0}
+          {#if returnList.length > 0 && !clickedSuggestion}
           <ul id="output" class="flex flex-col top-16 w-full absolute z-[99] bg-white">
             {#each returnList as suggestion, index}
             <li class={`prediction-item text-dark hover:text-white p-1 hover:bg-accent1 ${index === focusedIndex ? 'bg-accent2' : ''}`} on:click={() => selectSuggestion(suggestion)}>
@@ -554,6 +564,6 @@
   }
 
   .selected {
-    background-color: #d1d5db; /* Tailwind gray-300 */
+    background-color: #d1d5db;
   }
 </style>
