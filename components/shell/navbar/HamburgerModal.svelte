@@ -83,23 +83,32 @@
         <div class="px-4 pt-4 pb-0 flex flex-col">
             <div role="navigation" class="navbar flex flex-col order-3 md:order-1">
                 <ul class="list-none px-7 pt-7 pb-3 text-center flex flex-col">
-                    <li class="mb-1 order-6 md:order-1">
-                        <a href="#" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to Easter Bunny's Garden">Easter Bunny's Garden</a>
+                    <li class="mb-1 order-9 md:order-1">
+                        <a href="#" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to Easter Bunny's Garden" on:click={closeModal}>Easter Bunny's Garden</a>
                     </li>
-                    <li class="mb-1 order-5 md:order-2">
-                        <a href="#" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to Products">Products</a>
+                    <li class="mb-1 order-8 md:order-2">
+                        <a href="#" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to Products" on:click={closeModal}>Products</a>
                     </li>
-                    <li class="mb-1 order-4 md:order-3">
+                    <li class="mb-1 order-7 md:order-3">
                         <a href="#" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to Directory">Directory</a>
                     </li>
-                    <li class="mb-1 order-3 md:order-4">
-                        <a href="/dealsevents" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to Deals">Deals & Events</a>
-                    </li>
-                    <li class="mb-1 order-1 md:order-6">
+                    <li class="mb-1 order-6 md:order-4">
                         <a href="#" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to About">About</a>
                     </li>
-                    <li class="mb-1 order-6">
+                    <li class="mb-1 order-5">
                         <a href="/tenant" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to a Tenant Page">Altar'd State</a>
+                    </li>
+                    <li class="mb-1 order-4 md:order-6">
+                        <a href="/deals" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to Deals">Deals</a>
+                    </li>
+                    <li class="mb-1 order-3 md:order-7">
+                        <a href="/events" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to Deals">Events</a>
+                    </li>
+                    <li class="mb-1 order-2 md:order-8">
+                        <a href="/jobs" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to a Jobs Collection Page">Jobs</a>
+                    </li>
+                    <li class="mb-1 order-1 md:order-9">
+                        <a href="/news" class="text-white hover:text-accent2 transition-all duration-700 ease-in-out font-semibold uppercase leading-loose" aria-label="Navigate to News Collection Page">News</a>
                     </li>
                 </ul>
             </div>

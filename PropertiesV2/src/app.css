@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @apply font-sans relative m-0 p-0 not-italic font-normal text-base leading-5 bg-white;
+    font-optical-sizing: auto;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: grayscale;
+    font-size: 1rem;
+}
+
+.skip-link {
+    @apply absolute -top-10 left-0 bg-dark text-white z-50 transition-all duration-300 ease-in-out focus:top-0;
+}
+
+a {
+    @apply transition-all duration-300 ease-in-out;
+}
+
+footer .tns-outer {
+    @apply -mt-[31px];
+}
+
+@layer utilities {
+    .clamp-lg {
+        font-size: clamp(5.21875rem, 3.7454rem + 6.5481vw, 11.603125rem);
+    }
+
+    .clamp-md {
+        font-size: clamp(1.75rem, 3vw, 2.75rem);
+    }
+
+    .clamp-sm {
+        font-size: clamp(1.5rem, 0.98rem + 0.2564vw, 1.25rem);
+    }
+
+    .clamp-xs {
+        font-size: clamp(0.95rem, 1rem + 0.513vw, 1.25rem);
+    }
+
+    .line-clamp-1 {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .line-clamp-none {
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+    }
+
+    .gradient-to-b-shop {
+        background-image: linear-gradient(to bottom, var(--shop-d), var(--shop-l));
+    }
+
+    .gradient-to-b-eat {
+        background-image: linear-gradient(to bottom, var(--eat-d), var(--eat-l));
+    }
+}
+
+section:nth-of-type(even) {
+    @apply bg-light;
+}
+
+section:first-of-type,
+section:last-of-type {
+    @apply bg-white;
+}
+
+h2 {
+    @apply uppercase text-dark font-black clamp-lg leading-[1.2];
+}
+
+/* h2 span {
+    @apply text-accent2;
+} */
+
+/* Alt colors */
+h2 span {
+    @apply text-accent1;
+}
+
+h2.alt {
+    @apply uppercase text-dark font-black clamp-sm leading-[1.2] mt-12;
+}
+
+h2 span.alt {
+    @apply text-accent2 !important;
+}
+
+h3 {
+    @apply mb-12 mt-0 leading-9 clamp-md lowercase font-light;
+}
+
+h3.alt {
+    @apply text-base font-bold uppercase p-0 m-0;
+}
+
+h3.shop,
+h3.eat,
+h3.go {
+    @apply text-dark uppercase font-black clamp-md leading-none;
+}
+
+h3.eat span.alt-eat {
+    @apply text-eat !important;
+}
+
+h3.shop span.alt-shop {
+    @apply text-shop !important;
+}
+
+h3.go span.alt-go {
+    @apply text-accent2 !important;
+}
+
+/* h3 i {
+    @apply text-accent1 transform rotate-45 mt-1;
+} */
+
+/* Alt colors */
+h3 i {
+    @apply text-accent2 transform rotate-45 mt-1;
+}
+
+h4,
+.h2-alt {
+    @apply mt-8 mb-3 clamp-md uppercase font-bold;
+}
+
+p {
+    @apply clamp-sm font-normal mb-4;
+    line-height: 1.5; 
+}
+
+/* .btn-1-solid {
+    @apply bg-accent1 hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-accent1 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-accent1 focus:text-accent1 active:text-accent1 font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-1-outline {
+    @apply bg-white bg-opacity-30 hover:bg-accent1 focus:bg-accent1 active:bg-accent1 border-2 border-accent1 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-accent1 hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-2-solid {
+    @apply bg-accent2 hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-accent2 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-accent2 focus:text-accent2 active:text-accent2 font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-2-outline {
+    @apply bg-white bg-opacity-30 hover:bg-accent2 focus:bg-accent2 active:bg-accent2 border-2 border-accent2 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-accent2 hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+} */
+
+/* Alt colors */
+.btn-1-solid {
+    @apply bg-accent2 hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-accent2 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-accent2 focus:text-accent2 active:text-accent2 font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-1-outline {
+    @apply bg-white bg-opacity-30 hover:bg-accent2 focus:bg-accent2 active:bg-accent2 border-2 border-accent2 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-accent2 hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-2-solid {
+    @apply bg-accent1 hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-accent1 min-w-[30%] shadow-lg hover:shadow-none transition rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-accent1 focus:text-accent1 active:text-accent1 font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-2-outline {
+    @apply bg-white bg-opacity-30 hover:bg-accent1 focus:bg-accent1 active:bg-accent1 border-2 border-accent1 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-accent1 hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-white-solid {
+    @apply bg-white border-2 border-white min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer text-dark no-underline font-bold text-center whitespace-nowrap overflow-hidden transform duration-500 ease-in-out hover:scale-95 shadow-lg;
+}
+
+.btn-deal-solid {
+    @apply bg-shop-d hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-shop-d w-1/2 md:w-1/3 shadow-lg hover:shadow-none transition rounded-full leading-[3rem] uppercase px-5 py-0 md:my-0 cursor-pointer inline-block text-white hover:text-shop-d focus:text-shop-d active:text-shop-d font-semibold text-center no-underline whitespace-nowrap overflow-hidden text-xs;
+}
+
+.btn-enjoy-solid {
+    @apply bg-enjoy-d hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-enjoy-d w-1/2 md:w-1/3 shadow-lg hover:shadow-none transition rounded-full leading-[3rem] uppercase px-5 cursor-pointer inline-block text-white hover:text-enjoy-d focus:text-enjoy-d active:text-enjoy-d font-semibold text-center no-underline whitespace-nowrap overflow-hidden text-xs;
+}
+
+.btn-shop-solid {
+    @apply bg-shop-d hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-shop-d min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-shop-d focus:text-shop-d active:text-shop-d font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-news-solid {
+    @apply bg-news-d hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-news-d min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-news-d focus:text-news-d active:text-news-d font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-jobs-solid {
+    @apply bg-jobs-d hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-jobs-d min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-jobs-d focus:text-jobs-d active:text-jobs-d font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-shop-outline {
+    @apply bg-white bg-opacity-30 hover:bg-shop-d focus:bg-shop-d active:bg-shop-d border-2 border-shop-d min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-shop-d hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-eat-solid {
+    @apply bg-eat hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-eat min-w-[30%] shadow-lg hover:shadow-none transition rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-eat focus:text-eat active:text-eat font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-eat-outline {
+    @apply bg-white bg-opacity-30 hover:bg-eat focus:bg-eat active:bg-eat border-2 border-eat min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-eat hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-enjoy-outline {
+    @apply bg-white bg-opacity-30 hover:bg-enjoy-d focus:bg-enjoy-d active:bg-enjoy-d border-2 border-enjoy-d min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-enjoy-d hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-news-outline {
+    @apply bg-white bg-opacity-30 hover:bg-news-d focus:bg-news-d active:bg-news-d border-2 border-news-d min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-news-d hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-jobs-outline {
+    @apply bg-white bg-opacity-30 hover:bg-jobs-d focus:bg-jobs-d active:bg-jobs-d border-2 border-jobs-d min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-jobs-d hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-go-solid {
+    @apply bg-accent2 hover:bg-white hover:bg-opacity-30 focus:bg-white focus:bg-opacity-30 active:bg-white active:bg-opacity-30 border-2 border-accent2 min-w-[30%] shadow-lg hover:shadow-none transition rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-white hover:text-accent2 focus:text-accent2 active:text-accent2 font-bold text-center no-underline whitespace-nowrap overflow-hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.btn-go-outline {
+    @apply bg-white bg-opacity-30 hover:bg-accent2 focus:bg-accent2 active:bg-accent2 border-2 border-accent2 min-w-[30%] rounded-full leading-[3rem] uppercase px-10 cursor-pointer inline-block text-accent2 hover:text-white focus:text-white active:text-white font-bold text-center no-underline whitespace-nowrap overflow-hidden shadow-lg;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.close {
+    @apply cursor-pointer block rounded-full relative w-12 h-11 bg-white before:transform before:-rotate-45 before:absolute before:content-[''] before:w-[55%] before:h-[2px] before:bg-accent1 before:top-[48%] before:left-[22%] before:transition-all before:duration-300 before:ease-out hover:before:rotate-180 active:before:rotate-180 focus:before:rotate-180 after:transform after:rotate-45 after:absolute after:content-[''] after:w-[55%] after:h-[2px] after:bg-accent1 after:top-[48%] after:left-[22%] after:transition-all after:duration-300 after:ease-out hover:after:rotate-180 active:after:rotate-180 focus:after:rotate-180;
+    text-indent: -9999px;
+}
+
+section {
+    @apply relative w-screen overflow-x-hidden;
+}
+
+.accordion {
+    @apply my-2;
+}
+
+#TenantMore #navButtons button {
+    @apply w-11 h-11 rounded-full -translate-y-1/2 bg-white opacity-75 hover:opacity-100 text-dark absolute transition-all duration-300 ease-in-out shadow-lg;
+}
+
+#ManhattanProject button.mp-prev,
+#ManhattanProject button.mp-next,
+button.de-prev,
+button.de-next {
+    @apply w-12 h-12 mix-blend-overlay hover:mix-blend-normal active:mix-blend-normal focus:mix-blend-normal target:mix-blend-normal absolute -translate-y-1/2 transition-all duration-300 ease-in-out shadow-lg;
+}
+
+#BrandBrouhaha #navButtons button {
+    @apply w-11 h-11 rounded-full bg-white opacity-75 hover:opacity-100 text-dark transition-all duration-300 ease-in-out shadow-lg;
+}
+
+#ManhattanProject .tns-nav {
+    @apply w-full h-14 hidden md:flex md:flex-row justify-center content-center absolute bottom-20 md:bottom-28 z-30 gap-8;
+}
+
+#ManhattanProject .tns-nav button {
+    @apply w-4 h-4 rounded-full bg-white mix-blend-overlay self-center opacity-50 hover:opacity-75 active:opacity-75 focus:opacity-75 target:opacity-75 transform transition-all duration-300 ease-in-out relative before:absolute before:border before:border-solid before:border-white before:h-4 before:w-4 before:top-0 before:opacity-0 before:rounded-full before:transform before:-translate-x-1/2 before:-translate-y-1/2 before:transition-all before:duration-300 before:ease-in-out;
+}
+
+.primary-filter {
+    @apply border border-gray-300 hover:border-black transition rounded-[13px] flex text-sm items-center h-9 relative px-6 py-0 duration-700 m-2 relative leading-none;
+}
+
+.sub-filter {
+    @apply border border-gray-300 hover:border-black transition rounded-[13px] flex text-sm items-center h-6 relative px-4 py-0 duration-700 m-2;
+}
+
+.count-circle {
+    @apply absolute -top-2 -right-2 bg-slate-700 text-white min-w-5 h-5 leading-4 rounded-full text-center;
+}
+
+#ManhattanProject .tns-nav button.tns-nav-active {
+    @apply opacity-100 mix-blend-normal before:opacity-100 before:top-1/2 before:w-8 before:h-8;
+}
+
+footer {
+    margin-top: -1px !important;
+}
+
+/* #slider canvas {
+    @apply w-[150%] h-[150%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    z-index: 1;
+  } */
+
+#Details #my-mapplic-map .mapplic-layer-switcher > button.mapplic-active {
+display: none;
+}
+
+#Section1-Content {
+    background: linear-gradient(to bottom, hsl(200, 80%, 96%) 0%, #f8f9fa 100%);
+}
+
+#Section2-Content {
+    background: linear-gradient(to bottom,  hsl(4, 61%, 94%) 0%,#f8f9fa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+#Section3-Content {
+    background: linear-gradient(to bottom,  hsl(40, 68%, 98%) 0%,#f8f9fa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+/* Input box */
+.input-box {
+    @apply relative flex flex-row items-center w-full max-w-sm h-16 rounded-full mx-auto mb-0 mt-8 md:mt-0;
+}
+.input-box i.input-icon {
+    @apply absolute left-2.5 w-20 text-center text-[1.22rem] transform duration-200 ease-in-out;
+    will-change: transform;
+    -webkit-transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
+    -moz-transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
+    -o-transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
+    transition: transform 400ms 220ms cubic-bezier(-.190, 1.000, 0.220, 1.000);
+}
+
+.input-box form.input-form {
+    @apply overflow-hidden absolute top-0 left-16 w-[95%];
+}
+
+.input-box form.input-form input {
+    @apply relative w-[95%] h-16 rounded-full border-none bg-transparent px-[17px] text-xl font-normal outline-none transform duration-200 ease-in-out;
+}
+
+.input-box form.input-form ul#input {
+    @apply list-none w-full bg-accent1-o7;
+}
+
+.input-box svg.input-border {
+    @apply block w-full h-16;
+}
+
+.input-box path {
+    @apply stroke-[3px];
+    stroke-miterlimit: 10;
+    stroke-dasharray: 740;
+    stroke-dashoffset: 0;
+    -webkit-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
+    -moz-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
+    -o-transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
+    transition: stroke-dashoffset 400ms cubic-bezier(0.600, 0.040, 0.735, 0.990);
+}
+
+.border-entering path {
+    stroke-dasharray: 740;
+    stroke-dashoffset: 459;
+    transition: stroke-dashoffset 650ms cubic-bezier(0.755, 0.150, 0.205, 1.000);
+}
+
+.input-box .go-icon {
+    @apply absolute right-2.5 w-20 text-center text-[1.38rem] transform duration-200 cursor-pointer;
+    will-change: opacity;
+    transition: opacity 190ms ease-out, transform 260ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+.border-entering .go-icon {
+    transition: opacity 190ms ease-out, transform 260ms 20ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+.deal-entry #Hours,
+.job-entry #Hours {
+    display: none;
+}
+
+
+
+main.has-alert {
+    @apply mt-7;
+}
+
+main.no-alert {
+@apply mt-0;
+}
+
+.interior-hero {
+background-position: right -5% center;
+background-size: auto 125%;
+}
+
+.interior-hero.shop {
+@apply bg-shop-d;
+background-image: url('/images/shopping-bkg-25op.png');
+}
+
+.interior-hero.eat {
+@apply bg-eat-d;
+background-image: url('/images/food-bkg-25op.png');
+}
+
+.interior-hero.enjoy {
+@apply bg-enjoy-d;
+background-image: url('/images/events-bkg-25op.png');
+}
+
+.interior-hero.jobs {
+@apply bg-jobs-d;
+background-image: url('/images/jobs-bkg-25op.png');
+}
+
+.interior-hero.news {
+@apply bg-news-d;
+background-image: url('/images/news-bkg-25op.png');
+}
+
+@media (max-width: 1023px) {
+    .interior-hero.shop,
+    .interior-hero.eat,
+    .interior-hero.enjoy,
+    .interior-hero.jobs,
+    .interior-hero {
+        background-image: none;
+    }
+}

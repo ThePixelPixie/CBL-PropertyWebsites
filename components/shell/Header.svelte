@@ -205,18 +205,19 @@
           </g>
         </svg>
       </div>
-      <div
-        class="w-auto flex flex-col justify-center px-2 md:pl-4 mt-1 text-left text-clamp-xs"
-      >
-        <span class="block font-bold">Open Today</span>
-        10:00am - 8:00pm
+      <div on:click={toggleDrawer} on:keydown={(e) => e.key === 'Enter' && toggleDrawer()} tabindex="0" role="button" aria-expanded={isOpen} class="w-auto flex items-center cursor-pointer">
+        <div class="w-auto flex flex-col justify-center px-2 md:pl-4 mt-1 text-left text-clamp-xs">
+          <span class="block font-bold">Open Today</span>
+          10:00am - 8:00pm
+        </div>
+        <div class="ml-2 transform transition-transform duration-300" class:rotate-180={isOpen}>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </div>
       </div>
-      <button on:click={toggleDrawer} class="ml-2 transform transition-transform duration-300" class:rotate-180={isOpen}>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-        </svg>
-      </button>
     </div>
+
   </div>
 
   {#if isOpen}

@@ -20,14 +20,14 @@
     <figure class="absolute inset-0 p-0 m-0 h-full w-full z-20">
         <img src="https://images.contentstack.io/v3/assets/blt24b06c4905f92e56/bltb41063b4324fee1d/headers-Artboard 2.png" alt="A woman shopping racks of clothing" class="w-full h-full relative object-cover object-center ">
     </figure>
-    <div id="Overlay" class="absolute inset-0 p-0 m-0 h-full w-full z-20 bg-variable4-l backdrop-blur-6 bg-opacity-70"></div>
+    <div id="Overlay" class="absolute inset-0 p-0 m-0 h-full w-full z-20 bg-shop-l backdrop-blur-6 bg-opacity-70"></div>
     <div class="headlines w-full px-12 relative z-40 flex flex-col justify-center items-start">
-        <p class="intro font-normal mx-0 mt-1 mb-0 text-variable4-d drop-shadow-custom leading-none">Meet Me at the Mall</p>
-        <h2 class="shop font-black m-0 text-variable4-d clamp-lg drop-shadow-custom mb-3">Shop</h2>
-        <!-- <p class="tagline font-black m-0 text-variable4-d uppercase drop-shadow-custom">Hamilton Place</p> -->
+        <p class="intro font-normal mx-0 mt-1 mb-0 text-shop-d drop-shadow-custom leading-none">Meet Me at the Mall</p>
+        <h2 class="shop font-black m-0 text-shop-d clamp-lg drop-shadow-custom mb-3">Shop</h2>
+        <!-- <p class="tagline font-black m-0 text-shop-d uppercase drop-shadow-custom">Hamilton Place</p> -->
     </div>
     <svg class="w-screen h-8 bg-transparent block relative -bottom-[1px] transform rotate-180 z-40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
-        <path class="fill-variable4-l" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+        <path class="fill-shop-l" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
     </svg>
 </div>
 
@@ -48,13 +48,13 @@
     <figure class="absolute inset-0 p-0 m-0 h-full w-full z-20">
         <img src="https://images.contentstack.io/v3/assets/blt24b06c4905f92e56/blt4fa605cb42b830ff/headers-Artboard 1.png" alt="Spaghetti being twirled on a spoon" class="w-full h-full relative object-cover object-center ">
     </figure>
-    <div id="Overlay" class="absolute inset-0 p-0 m-0 h-full w-full z-20 bg-variable2-l backdrop-blur-6 bg-opacity-70"></div>
+    <div id="Overlay" class="absolute inset-0 p-0 m-0 h-full w-full z-20 bg-eat-l backdrop-blur-6 bg-opacity-70"></div>
     <div class="headlines w-full px-12 relative z-40 flex flex-col justify-center items-start">
-        <p class="intro font-normal mx-0 mb-0 text-variable2-d drop-shadow-custom leading-none">Let's go out to</p>
-        <h2 class="eat font-black m-0 text-variable2-d clamp-lg drop-shadow-custom mb-3">Eat</h2>
+        <p class="intro font-normal mx-0 mb-0 text-eat-d drop-shadow-custom leading-none">Let's go out to</p>
+        <h2 class="eat font-black m-0 text-eat-d clamp-lg drop-shadow-custom mb-3">Eat</h2>
     </div>
     <svg class="w-screen h-8 bg-transparent block relative -bottom-[1px] transform rotate-180 z-40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
-        <path class="fill-variable2-l" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+        <path class="fill-eat-l" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
     </svg>
 </div>
 

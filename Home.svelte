@@ -13,9 +13,7 @@
 
 <!-- <ShoppingBags /> -->
 
-<main class="w-screen h-auto pb-24">
-    <SectionHeader />
-</main>
+<SectionHeader />
 
 <!-- <DealsEventsScrollGrid /> -->
 

@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import postcss from './postcss.config.js';
 
 export default defineConfig({
   plugins: [svelte()],
@@ -8,10 +7,10 @@ export default defineConfig({
     outDir: 'dist',
   },
   server: {
-    open: true, // Automatically open the browser
+    open: true,
     port: 3000,
   },
   css: {
-    postcss: './postcss.config.js',
+    postcss: './postcss.config.cjs',
   }
 });
